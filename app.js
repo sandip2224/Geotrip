@@ -1,0 +1,24 @@
+const express = require('express')
+const path = require('path')
+const colors = require('colors')
+
+require('dotenv').config({ path: './.env' })
+const connectDB = require('./config/db')
+
+const app = express()
+
+connectDB()
+
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+// app.use('/api/v1/stores', require('./routes/storeRoute'))
+
+const server = app.listen(process.env.PORT || 3000, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT || 3000}`.green.bold))
+
+process.on("unhandledRejection", (err, promise) => {
+    console.log(`Error: ${err.message}`.red);
+    server.close(() => process.exit(1));
+})
