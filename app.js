@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.use('/api/v1/stores', require('./routes/storeRoute'))
+app.use('/api/v1/places', require('./routes/placeRoute'))
 
 const server = app.listen(process.env.PORT || 3000, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT || 3000}`.green.bold))
 
