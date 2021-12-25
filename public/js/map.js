@@ -18,7 +18,7 @@ async function getLocations() {
                 'coordinates': [loc.location.coordinates[0], loc.location.coordinates[1]]
             },
             properties: {
-                placeId: loc.placeId,
+                locationId: loc.locationId,
                 icon: 'suitcase'
             }
         }
@@ -42,7 +42,7 @@ function loadMapPoints(places) {
             'layout': {
                 'icon-image': '{icon}-15',
                 'icon-size': 1.5,
-                'text-field': '{placeId}',
+                'text-field': '{locationId}',
                 'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
                 'text-offset': [0, 0.9],
                 'text-anchor': 'top'

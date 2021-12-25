@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const geocoder = require('../utils/geocoder')
 
 const PlaceSchema = new mongoose.Schema({
-    placeId: {
+    locationId: {
         type: String,
         required: [true, 'Please add a place id'],
         unique: true,
