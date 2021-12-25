@@ -6,8 +6,9 @@ locationForm.addEventListener('submit', addLocation)
 
 async function addLocation(e) {
     e.preventDefault()
-    if (locationId.value === '' || locationAddress.value === '') {
-        alert('Please fill in fields')
+    if (locationId.value.trim() === '' || locationAddress.value.trim() === '') {
+        document.getElementById("alert2").style.display = "block";
+        return;
     }
     const bodyVal = {
         locationId: locationId.value,
@@ -21,12 +22,15 @@ async function addLocation(e) {
             },
             body: JSON.stringify(bodyVal)
         })
-        if (res.status === 400) throw Error('Location already exists!')
-        alert('Location added!')
+        if (res.status === 400) {
+            document.getElementById("alert3").style.display = "block";
+            return;
+        }
+        document.getElementById("alert1").style.display = "block";
         window.location.href = '/index.html';
     }
     catch (err) {
-        alert(err);
+        console.log(err)
         return;
     }
 }
