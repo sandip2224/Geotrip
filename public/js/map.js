@@ -38,7 +38,7 @@ function loadMapPoints(places) {
         map.addLayer({
             'id': 'points',
             'type': 'symbol',
-            'source': 'point', // reference the data source
+            'source': 'point',
             'layout': {
                 'icon-image': '{icon}-15',
                 'icon-size': 1.5,

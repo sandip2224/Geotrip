@@ -3,6 +3,18 @@ const router = express.Router()
 
 const placeModel = require('../models/Place')
 
+router.get('/', (req, res) => {
+    res.render('auth')
+})
+
+router.get('/home', (req, res) => {
+    res.render('home')
+})
+
+router.get('/add', (req, res) => {
+    res.render('add')
+})
+
 router.get('/', async (req, res) => {
     try {
         const places = await placeModel.find()
@@ -21,7 +33,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const place = await placeModel.create(req.body);
+        const place = await placeModel.create(req.body)
         return res.status(201).json({
             success: true,
             data: place
