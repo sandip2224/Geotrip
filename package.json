@@ -1,5 +1,5 @@
 {
-  "name": "tripp",
+  "name": "geotrip",
   "version": "1.0.0",
   "description": "Full stack travel log application using Mapbox API",
   "main": "app.js",
