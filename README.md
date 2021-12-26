@@ -21,13 +21,17 @@
 
 ## 🔥 Screenshots
 
-| Landing Page |
+| Auth Landing Page |
 | - |
-| ![media/1.PNG](media/1.PNG) |
+| ![client/public/assets/images/auth.PNG](client/public/assets/images/auth.PNG) |
 
-| Chat Page |
+| Auth Screen |
 | - |
-| ![media/2.PNG](media/2.PNG) |
+| ![client/public/assets/images/auth0.PNG](client/public/assets/images/auth0.PNG) |
+
+| Home Page |
+| - |
+| ![client/public/assets/images/home.PNG](client/public/assets/images/home.PNG) |
 
 <!-- BUILT WITH -->  
 
