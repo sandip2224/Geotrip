@@ -1,7 +1,7 @@
 # Geotrip 🌍
 
 <p align="center">
-   <img src="media/banner1.gif" alt="Logo"/>
+   <img src="client/public/assets/images/Banner.jpg" alt="Logo"/>
 </p>
 <!-- PROJECT LOGO -->
 
