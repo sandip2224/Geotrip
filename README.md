@@ -29,12 +29,6 @@
 | - |
 | ![media/2.PNG](media/2.PNG) |
 
-## 🚩New Updates
-
-- Added `{user} is typing` functionality.
-- Added persistent chat storage in MongoDB Atlas
-
-
 <!-- BUILT WITH -->  
 
 ## How to Install Locally
