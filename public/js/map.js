@@ -10,6 +10,7 @@ var map = new mapboxgl.Map({
 async function getLocations() {
     const res = await fetch('/api/v1/places')
     const locs = await res.json()
+    console.log(locs)
     const places = locs.data.map(loc => {
         return {
             'type': 'Feature',

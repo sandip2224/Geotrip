@@ -27,7 +27,7 @@ async function addLocation(e) {
             return;
         }
         document.getElementById("alert1").style.display = "block";
-        window.location.href = '/index.html';
+        window.location.href = '/home';
     }
     catch (err) {
         console.log(err)
