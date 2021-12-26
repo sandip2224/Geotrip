@@ -13,6 +13,10 @@ const PlaceSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add an address']
     },
+    userId: {
+        type: String,
+        required: true
+    },
     location: { // Will be done automatically
         type: {
             type: String,

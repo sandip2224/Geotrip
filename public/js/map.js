@@ -6,12 +6,16 @@ var map = new mapboxgl.Map({
     center: [-77.4144, 25.0759]
 })
 
+const userId = document.getElementById('user-id')
+
 // Fetch locations from API
 async function getLocations() {
     const res = await fetch('/api/v1/places')
     const locs = await res.json()
     console.log(locs)
-    const places = locs.data.map(loc => {
+    const filteredLocs = locs.data.filter(loc => loc.userId == userId.value)
+    console.log(filteredLocs)
+    const places = filteredLocs.map(loc => {
         return {
             'type': 'Feature',
             'geometry': {

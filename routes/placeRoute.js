@@ -4,16 +4,22 @@ const router = express.Router()
 const { auth, requiresAuth } = require('express-openid-connect')
 
 router.get('/', (req, res) => {
-    if (req.oidc.isAuthenticated()) res.redirect('/home')
+    if (req.oidc.isAuthenticated()) {
+        res.redirect('/home')
+    }
     else res.render('auth')
 })
 
 router.get('/home', requiresAuth(), (req, res) => {
-    res.render('home')
+    res.render('home', {
+        userId: req.oidc.user.email
+    })
 })
 
 router.get('/add', requiresAuth(), (req, res) => {
-    res.render('add')
+    res.render('add', {
+        userId: req.oidc.user.email
+    })
 })
 
 module.exports = router

@@ -1,6 +1,7 @@
 const locationForm = document.getElementById('location-form')
 const locationId = document.getElementById('location-id')
 const locationAddress = document.getElementById('location-address')
+const userId = document.getElementById('user-id')
 
 locationForm.addEventListener('submit', addLocation)
 
@@ -12,8 +13,10 @@ async function addLocation(e) {
     }
     const bodyVal = {
         locationId: locationId.value,
-        address: locationAddress.value
+        address: locationAddress.value,
+        userId: userId.value
     }
+    console.log(bodyVal)
     try {
         const res = await fetch('/api/v1/places', {
             method: 'POST',
