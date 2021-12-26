@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const geocoder = require('../utils/geocoder')
+const geocoder = require('../../frontend/utils/geocoder')
 
 const PlaceSchema = new mongoose.Schema({
     locationId: {

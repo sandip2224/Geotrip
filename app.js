@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const { auth, requiresAuth } = require('express-openid-connect')
 require('dotenv').config({ path: './.env' })
 
-const connectDB = require('./config/db')
+const connectDB = require('./backend/config/db')
 const app = express()
 const config = {
     authRequired: false,
@@ -19,17 +19,17 @@ const config = {
 connectDB()
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'frontend/views'))
 
 if (process.env.NODE_ENV == 'development') app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'frontend/public')))
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config))
-app.use('/api/v1/places', require('./routes/apiRoute'))
-app.use('/', require('./routes/placeRoute'))
+app.use('/api/v1/places', require('./backend/routes/apiRoute'))
+app.use('/', require('./backend/routes/placeRoute'))
 
 const server = app.listen(process.env.PORT || 3000, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT || 3000}`.green.bold))
 
