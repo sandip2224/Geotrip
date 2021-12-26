@@ -5,7 +5,6 @@ const PlaceSchema = new mongoose.Schema({
     locationId: {
         type: String,
         required: [true, 'Please add a place id'],
-        unique: true,
         trim: true,
         maxlength: [10, 'Place id must be less than 10 chars']
     },

@@ -12,9 +12,7 @@ const userId = document.getElementById('user-id')
 async function getLocations() {
     const res = await fetch('/api/v1/places')
     const locs = await res.json()
-    console.log(locs)
     const filteredLocs = locs.data.filter(loc => loc.userId == userId.value)
-    console.log(filteredLocs)
     const places = filteredLocs.map(loc => {
         return {
             'type': 'Feature',

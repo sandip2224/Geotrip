@@ -16,7 +16,6 @@ async function addLocation(e) {
         address: locationAddress.value,
         userId: userId.value
     }
-    console.log(bodyVal)
     try {
         const res = await fetch('/api/v1/places', {
             method: 'POST',
