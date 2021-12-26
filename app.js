@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const colors = require('colors')
+const cors = require('cors')
 const morgan = require('morgan')
 const { auth, requiresAuth } = require('express-openid-connect')
 require('dotenv').config({ path: './.env' })
@@ -14,7 +15,7 @@ const config = {
     baseURL: process.env.BASE_URL,
     clientID: process.env.CLIENT_ID,
     issuerBaseURL: process.env.ISSUER_BASE_URL
-};
+}
 
 connectDB()
 
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'frontend/views'))
 
 if (process.env.NODE_ENV == 'development') app.use(morgan('dev'))
+app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'frontend/public')))
