@@ -10,6 +10,10 @@ router.get('/', (req, res) => {
     else res.render('auth')
 })
 
+router.post('/callback', (req, res) => {
+    res.redirect('/home')
+})
+
 router.get('/home', requiresAuth(), (req, res) => {
     res.render('home', {
         userId: req.oidc.user.email
