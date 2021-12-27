@@ -33,6 +33,10 @@
 | - |
 | ![client/public/assets/images/home.PNG](client/public/assets/images/home.PNG) |
 
+|  Add Modal |
+| - |
+| ![client/public/assets/images/home.PNG](client/public/assets/images/add.PNG) |
+
 <!-- BUILT WITH -->  
 
 ## How to Install Locally
