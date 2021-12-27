@@ -1,3 +1,47 @@
+const userId = document.getElementById('user-id')
+const locationForm = document.getElementById('location-form')
+const locationId = document.getElementById('location-id')
+const locationAddress = document.getElementById('location-address')
+
+locationForm.addEventListener('submit', addLocation)
+
+//---------------------------------- POST request handler starts ---------------------------------//
+async function addLocation(e) {
+    e.preventDefault()
+    if (locationId.value.trim() === '' || locationAddress.value.trim() === '') {
+        document.getElementById("alert2").style.display = "block";
+        return;
+    }
+    const bodyVal = {
+        locationId: locationId.value,
+        address: locationAddress.value,
+        userId: userId.value
+    }
+    try {
+        const res = await fetch('/api/v1/places', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodyVal)
+        })
+        if (res.status === 400) {
+            document.getElementById("alert3").style.display = "block";
+            return;
+        }
+        document.getElementById("alert1").style.display = "block";
+        window.location.href = '/home';
+    }
+    catch (err) {
+        console.log(err)
+        return;
+    }
+}
+
+//---------------------------------- POST request handler ends ---------------------------------//
+
+//--------------------- Fetch locations from API and map rendering starts-----------------------------//
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuZGlwMjIyNCIsImEiOiJja3hhNWhuY3EwZTZ6Mm9td3dvdnp0eThsIn0.K56FMglwPMghPY0Finou_g';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -6,9 +50,6 @@ var map = new mapboxgl.Map({
     center: [-77.4144, 25.0759]
 })
 
-const userId = document.getElementById('user-id')
-
-// Fetch locations from API
 async function getLocations() {
     const res = await fetch('/api/v1/places')
     const locs = await res.json()
@@ -53,5 +94,6 @@ function loadMapPoints(places) {
         })
     })
 }
+//--------------------- Fetch locations from API and map rendering ends -----------------------------//
 
 getLocations()

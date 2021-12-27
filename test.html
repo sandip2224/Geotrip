@@ -1,42 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Mapbox CDN -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-
-    <style>
-        #alert1,
-        #alert2,
-        #alert3,
-        #user-id {
-            display: none;
-        }
-    </style>
-
-    <title>Geotrip | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
 </head>
 
 <body>
-    <div class="container my-3">
-        <input type="text" id="user-id" value=<%=userId%>>
-        <h1 class="display-4 text-center"><i class="fas fa-map-marked mr-4"></i>Geotrip Locator</h1>
+    <div class="container">
         <a href="#" class="btn btn-success mb-4" data-toggle="modal" data-target="#form">Add location</a>
-        <a href="/logout" class="btn btn-success mb-4">Logout</a>
-        <div id="map" style="width: 100%; height: 500px; border-radius: 20px;"></div>
     </div>
 
     <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -76,18 +55,13 @@
                     </div>
                     <div class="modal-footer border-top-0 d-flex justify-content-center">
                         <button type="submit" class="btn btn-success">Submit</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                        <a href="#" class="btn btn-secondary" data-dismiss="modal">Back</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-    <!-- External JS -->
-    <script src="js/map.js"></script>
-
-    <!-- Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
