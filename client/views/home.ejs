@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="../public/assets/images/earth.png" type="image/png">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -18,25 +20,18 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 
-    <style>
-        #alert1,
-        #alert2,
-        #alert3,
-        #user-id {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/home.css">
 
     <title>Geotrip | Home</title>
 </head>
 
 <body>
-    <div class="container my-3">
+    <div class="container-fluid my-3">
         <input type="text" id="user-id" value=<%=userId%>>
-        <h1 class="display-4 text-center"><i class="fas fa-map-marked mr-4"></i>Geotrip Locator</h1>
-        <a href="#" class="btn btn-success mb-4" data-toggle="modal" data-target="#form">Add location</a>
+        <h1 class="display-4 text-center"><i class="fas fa-globe mr-4"></i>Geotrip Locator</h1>
+        <button type="button" class="btn btn-success mb-4" data-toggle="modal" data-target="#form">Add location</button>
         <a href="/logout" class="btn btn-success mb-4">Logout</a>
-        <div id="map" style="width: 100%; height: 500px; border-radius: 20px; border: 1px solid black"></div>
+        <div id="map"></div>
     </div>
 
     <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

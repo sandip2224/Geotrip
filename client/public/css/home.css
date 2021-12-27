@@ -1,0 +1,16 @@
+#alert1,
+#alert2,
+#alert3,
+#user-id {
+    display: none;
+}
+
+.container-fluid h1 {
+    font-size: 3.5em;
+}
+
+#map {
+    height: 75vh;
+    border-radius: 10px;
+    border: 1px solid black
+}
