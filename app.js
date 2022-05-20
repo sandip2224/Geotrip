@@ -9,12 +9,12 @@ require('dotenv').config({ path: './.env' })
 const connectDB = require('./server/config/db')
 const app = express()
 const config = {
-    authRequired: false,
-    auth0Logout: true,
-    secret: process.env.SECRET,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    issuerBaseURL: process.env.ISSUER_BASE_URL
+	authRequired: false,
+	auth0Logout: true,
+	secret: process.env.SECRET,
+	baseURL: process.env.BASE_URL,
+	clientID: process.env.CLIENT_ID,
+	issuerBaseURL: process.env.ISSUER_BASE_URL
 }
 
 connectDB()
@@ -36,6 +36,6 @@ app.use('/', require('./server/routes/placeRoute'))
 const server = app.listen(process.env.PORT || 3000, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT || 3000}`.green.bold))
 
 process.on("unhandledRejection", (err, promise) => {
-    console.log(`Error: ${err.message}`.red)
-    server.close(() => process.exit(1))
+	console.log(`Error: ${err.message}`.red)
+	server.close(() => process.exit(1))
 })
