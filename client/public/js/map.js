@@ -1,6 +1,6 @@
 const userId = document.getElementById('user-id')
-const locationForm = document.getElementById('location-form')
 const locationId = document.getElementById('location-id')
+const locationForm = document.getElementById('location-form')
 const locationAddress = document.getElementById('location-address')
 
 locationForm.addEventListener('submit', addLocation)
@@ -9,8 +9,8 @@ locationForm.addEventListener('submit', addLocation)
 async function addLocation(e) {
     e.preventDefault()
     if (locationId.value.trim() === '' || locationAddress.value.trim() === '') {
-        document.getElementById("alert2").style.display = "block";
-        return;
+        document.getElementById("alert2").style.display = "block"
+        return
     }
     const bodyVal = {
         locationId: locationId.value,
@@ -26,15 +26,15 @@ async function addLocation(e) {
             body: JSON.stringify(bodyVal)
         })
         if (res.status === 400) {
-            document.getElementById("alert3").style.display = "block";
-            return;
+            document.getElementById("alert3").style.display = "block"
+            return
         }
-        document.getElementById("alert1").style.display = "block";
-        window.location.href = '/home';
+        document.getElementById("alert1").style.display = "block"
+        window.location.href = '/home'
     }
     catch (err) {
         console.log(err)
-        return;
+        return
     }
 }
 
@@ -42,7 +42,7 @@ async function addLocation(e) {
 
 //--------------------- Fetch locations from API and map rendering starts-----------------------------//
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuZGlwMjIyNCIsImEiOiJja3hhNWhuY3EwZTZ6Mm9td3dvdnp0eThsIn0.K56FMglwPMghPY0Finou_g';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuZGlwYW4yMjI0IiwiYSI6ImNsM2p2aWN2NjBrc2wzcW83cGZvM3hvdGcifQ.eXaDnUSmiZZ91xnuYFWMsw';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',

@@ -8,7 +8,7 @@
 
     <link rel="icon" href="../public/assets/images/earth.png" type="image/png">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!-- Font Awesome CDN -->
@@ -16,13 +16,13 @@
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Mapbox CDN -->
+    <!-- Mapbox CSS+JS CDN -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="css/home.css">
 
-    <title>Geotrip | Home</title>
+    <title>Geotrip 🌍 | Home</title>
 </head>
 
 <body>
@@ -31,6 +31,8 @@
         <h1 class="display-4 text-center"><i class="fas fa-globe mr-4"></i>Geotrip Locator</h1>
         <button type="button" class="btn btn-success mb-4" data-toggle="modal" data-target="#form">Add location</button>
         <a href="/logout" class="btn btn-success mb-4">Logout</a>
+
+        <!-- Mapbox div #map -->
         <div id="map"></div>
     </div>
 
@@ -82,7 +84,7 @@
     <!-- External JS -->
     <script src="js/map.js"></script>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

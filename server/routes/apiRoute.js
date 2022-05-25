@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 			data: places
 		})
 	} catch (err) {
-		res.status(500).json({ message: 'Server error', error: err })
+		res.status(500).json({ message: 'Server error!', error: err })
 	}
 })
 
@@ -25,9 +25,9 @@ router.post('/', async (req, res) => {
 		})
 	} catch (err) {
 		if (err.code === 11000) {
-			return res.status(400).json({ error: 'This place already exists' });
+			return res.status(400).json({ error: 'This place already exists!' });
 		}
-		res.status(500).json({ message: 'Server error', error: err })
+		res.status(500).json({ message: 'Server error!', error: err })
 	}
 })
 
