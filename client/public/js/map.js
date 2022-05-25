@@ -63,7 +63,7 @@ async function getLocations() {
             },
             properties: {
                 locationId: loc.locationId,
-                icon: 'suitcase'
+                icon: 'beach'
             }
         }
     })
