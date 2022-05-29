@@ -1,7 +1,7 @@
-const userId = document.getElementById('user-id')
-const locationId = document.getElementById('location-id')
-const locationForm = document.getElementById('location-form')
-const locationAddress = document.getElementById('location-address')
+const userId = document.getElementById('user-id')  // User id sent as kv pair under /home
+const locationId = document.getElementById('location-id') // Location alias
+const locationForm = document.getElementById('location-form') // Form
+const locationAddress = document.getElementById('location-address') // Location Address
 
 locationForm.addEventListener('submit', addLocation)
 
@@ -12,18 +12,17 @@ async function addLocation(e) {
         document.getElementById("alert2").style.display = "block"
         return
     }
-    const bodyVal = {
-        locationId: locationId.value,
-        address: locationAddress.value,
-        userId: userId.value
-    }
     try {
         const res = await fetch('/api/v1/places', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(bodyVal)
+            body: JSON.stringify({
+                locationId: locationId.value,
+                address: locationAddress.value,
+                userId: userId.value
+            })
         })
         if (res.status === 400) {
             document.getElementById("alert3").style.display = "block"
@@ -54,6 +53,19 @@ async function getLocations() {
     const res = await fetch('/api/v1/places')
     const locs = await res.json()
     const filteredLocs = locs.data.filter(loc => loc.userId == userId.value)
+
+    //  Places is an array of geojson coordinates. It is a format for encoding a variety of geographic ds
+    // {
+    //     "type": "Feature",
+    //     "geometry": {
+    //         "type": "Point",
+    //         "coordinates": [125.6, 10.1]
+    //     },
+    //     "properties": {
+    //         "name": "Dinagat Islands"
+    //     }
+    // }
+
     const places = filteredLocs.map(loc => {
         return {
             'type': 'Feature',
@@ -61,9 +73,9 @@ async function getLocations() {
                 'type': 'Point',
                 'coordinates': [loc.location.coordinates[0], loc.location.coordinates[1]]
             },
-            properties: {
-                locationId: loc.locationId,
-                icon: 'beach'
+            'properties': {
+                'locationId': loc.locationId,
+                'icon': 'beach'
             }
         }
     })
@@ -78,7 +90,7 @@ function loadMapPoints(places) {
                 'type': 'FeatureCollection',
                 'features': places
             }
-        });
+        })
         map.addLayer({
             'id': 'points',
             'type': 'symbol',

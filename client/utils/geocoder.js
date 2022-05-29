@@ -7,6 +7,5 @@ const options = {
 }
 
 const geocoder = NodeGeocoder(options)
-console.log(geocoder)
 
 module.exports = geocoder

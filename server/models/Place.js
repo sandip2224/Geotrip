@@ -4,13 +4,13 @@ const geocoder = require('../../client/utils/geocoder')
 const PlaceSchema = new mongoose.Schema({
     locationId: {
         type: String,
-        required: [true, 'Please add a place id'],
+        required: [true, 'Please add a location alias'],
         trim: true,
-        maxlength: [10, 'Place id must be less than 10 chars']
+        maxlength: [10, 'Location alias must be less than 10 chars']
     },
     address: {
         type: String,
-        required: [true, 'Please add an address']
+        required: [true, 'Please add a location address']
     },
     userId: {
         type: String,
