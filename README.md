@@ -15,7 +15,7 @@
 - Frontend: EJS Templating Engine, CSS
 - Backend: Node.js + Expresss.js
 - Libraries/Frameworks: Mongoose, Auth0
-- API: Mapbox, Mapquest API
+- API / npm package: Mapquest API, Node Geocoder
 - Database: MongoDB Atlas
 ---
 
