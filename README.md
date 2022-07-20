@@ -3,39 +3,35 @@
 <p align="center">
    <img src="client/public/assets/images/Banner.jpg" alt="Logo"/>
 </p>
-<!-- PROJECT LOGO -->
-
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?style=for-the-badge)](http://shields.io/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 <!-- ABOUT THE PROJECT -->
 
 ## Built With
 
-- Frontend: EJS Templating Engine, CSS
-- Backend: Node.js + Expresss.js
-- Libraries/Frameworks: Mongoose, Auth0
-- API / npm package: Mapquest API, Node Geocoder
-- Database: MongoDB Atlas
+- UI + Backend: EJS Templating Engine, CSS | Node.js + Express.js
+- Libs + Frameworks: Mongoose, Auth0
+- API + Packages: Mapquest API, Node Geocoder
+- DB: MongoDB Atlas
 ---
 
 ## 🔥 Screenshots
 
-| Auth Landing Page |
-| - |
-| ![client/public/assets/images/auth.PNG](client/public/assets/images/auth.PNG) |
-
-| Auth Screen |
-| - |
-| ![client/public/assets/images/auth0.PNG](client/public/assets/images/auth0.PNG) |
-
-| Home Page |
-| - |
-| ![client/public/assets/images/home.PNG](client/public/assets/images/home.PNG) |
-
-|  Add Modal |
-| - |
-| ![client/public/assets/images/home.PNG](client/public/assets/images/add.PNG) |
+<details>
+    <summary>Auth Landing Page</summary>
+    <img src="client/public/assets/images/auth.PNG"/>
+</details>
+<details>
+    <summary>Auth Screen</summary>
+    <img src="client/public/assets/images/auth0.PNG"/>
+</details>
+<details>
+    <summary>Home Page</summary>
+    <img src="client/public/assets/images/home.PNG"/>
+</details>
+<details>
+    <summary>Add Location Modal</summary>
+    <img src="client/public/assets/images/add.PNG"/>
+</details>
 
 <!-- BUILT WITH -->  
 
