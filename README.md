@@ -14,7 +14,7 @@
 - DB: MongoDB Atlas
 ---
 
-## 🔥 Screenshots
+## Screenshots
 
 <details>
     <summary>Auth Landing Page</summary>
