@@ -4,14 +4,13 @@
   "description": "Full stack travel log application using Mapbox API",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server/app",
-    "dev": "cross-env NODE_ENV=development nodemon server/app"
+    "start:dev": "set NODE_ENV=development&& nodemon server/app",
+    "start:prod": "set NODE_ENV=production&& node server/app"
   },
   "author": "Sandipan Das <sandipan2224@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
