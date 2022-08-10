@@ -1,10 +1,39 @@
+const redis = require('redis')
+
 const placeModel = require('../models/Place')
+
+const client = redis.createClient({
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    // password: process.env.REDIS_PASSWORD
+})
+
+client.on("error", (err) => {
+    console.log(err);
+})
+
+client.connect();
 
 exports.get_all_places = async (req, res) => {
     try {
+        const value = await client.get("places")
+        const parsedData = JSON.parse(value)
+        if (parsedData) {
+            return res.status(200).json({
+                success: true,
+                status: 'Served from cache!!',
+                count: parsedData.length,
+                data: parsedData
+            })
+        }
         const places = await placeModel.find()
+        await client.set("places", JSON.stringify(places), {
+            EX: 10,
+            NX: true
+        })
         return res.status(200).json({
             success: true,
+            status: 'Served from database!!',
             count: places.length,
             data: places
         })
