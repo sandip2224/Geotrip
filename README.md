@@ -11,7 +11,7 @@
 - UI + Backend: EJS Templating Engine, CSS | Node.js + Express.js
 - Libs + Frameworks: Mongoose, Auth0
 - API + Packages: Mapquest API, Node Geocoder
-- DB: MongoDB Atlas
+- DB: MongoDB Atlas, Redis
 ---
 
 ## Screenshots
