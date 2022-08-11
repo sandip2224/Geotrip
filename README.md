@@ -1,8 +1,6 @@
 # Geotrip 🌍
 
-<p align="center">
-   <img src="client/public/assets/images/Banner.jpg" alt="Logo"/>
-</p>
+Keep your trips close to heart!
 
 <!-- ABOUT THE PROJECT -->
 
