@@ -14,24 +14,9 @@
 - DB: MongoDB Atlas, Redis
 ---
 
-## Screenshots
+## UML Architecture Diagram
 
-<details>
-    <summary>Auth Landing Page</summary>
-    <img src="client/public/assets/images/auth.PNG"/>
-</details>
-<details>
-    <summary>Auth Screen</summary>
-    <img src="client/public/assets/images/auth0.PNG"/>
-</details>
-<details>
-    <summary>Home Page</summary>
-    <img src="client/public/assets/images/home.PNG"/>
-</details>
-<details>
-    <summary>Add Location Modal</summary>
-    <img src="client/public/assets/images/add.PNG"/>
-</details>
+![ChatIO UML](https://user-images.githubusercontent.com/61842142/184120584-3febc842-483b-40d6-827f-c3a5653d922c.png)
 
 <!-- BUILT WITH -->  
 
