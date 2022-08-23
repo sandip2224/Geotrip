@@ -1,8 +1,6 @@
 # Geotrip 🌍
 
-<p align="center">
-   <img src="client/public/assets/images/Banner.jpg" alt="Logo"/>
-</p>
+Keep your trips close to heart!
 
 <!-- ABOUT THE PROJECT -->
 
@@ -11,27 +9,12 @@
 - UI + Backend: EJS Templating Engine, CSS | Node.js + Express.js
 - Libs + Frameworks: Mongoose, Auth0
 - API + Packages: Mapquest API, Node Geocoder
-- DB: MongoDB Atlas
+- DB: MongoDB Atlas, Redis
 ---
 
-## Screenshots
+## UML Architecture Diagram
 
-<details>
-    <summary>Auth Landing Page</summary>
-    <img src="client/public/assets/images/auth.PNG"/>
-</details>
-<details>
-    <summary>Auth Screen</summary>
-    <img src="client/public/assets/images/auth0.PNG"/>
-</details>
-<details>
-    <summary>Home Page</summary>
-    <img src="client/public/assets/images/home.PNG"/>
-</details>
-<details>
-    <summary>Add Location Modal</summary>
-    <img src="client/public/assets/images/add.PNG"/>
-</details>
+![ChatIO UML](https://user-images.githubusercontent.com/61842142/184120584-3febc842-483b-40d6-827f-c3a5653d922c.png)
 
 <!-- BUILT WITH -->  
 
@@ -52,33 +35,29 @@
 **3. Create a .env file in root directory and add**  
 
   ```
-MONGO_URI=XXXXXXXX
-GEOCODER_PROVIDER=mapquest
-GEOCODER_API_KEY=XXXXXXXX
-ISSUER_BASE_URL=XXXXXXXX
-CLIENT_ID=XXXXXXXX
-BASE_URL=http://localhost:3000
-SECRET=XXXXXXXX
+   # Find on developer.mapquest.com
+   GEOCODER_PROVIDER=mapquest
+   GEOCODER_API_KEY=XXXXXXXXXXXXX
+
+   # Find on Auth0
+   ISSUER_BASE_URL=XXXXXXXXXXX
+   CLIENT_ID=XXXXXXXXXXXXXXXXXX
+   BASE_URL=http://localhost:3000
+   SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+   # Find on redislabs online
+   REDIS_HOST=XXXXXXXXXXXXXXXXXXXXXXXX
+   REDIS_PORT=XXXXX
+   REDIS_PASSWORD=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
   ```
 
-**4. Run server in development mode at `localhost:3000`**  
+**4. Run server in dev/prod mode at `localhost:3000`**  
 
   ```
-  yarn dev
+  yarn run start:dev
+  yarn run start:prod
   ```
-  
----
-
-## Contributing
-
-If you'd like to contribute, please **fork** the repository and then raise a PR with necessary changes. Thank you.
-
----
-
-## 🤎 Found this project interesting?
-
-If you found this project useful, then please leave a :star: on Github💔.
-
 ---
 
 ## 👨 Maintainer
